@@ -1,0 +1,127 @@
+.movie-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Dark background for a sleek look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.2); /* Subtle gold glow */
+}
+
+.movie-poster {
+  position: relative;
+  width: 100%;
+  max-width: 250px; /* Set a maximum width to prevent oversized images */
+  aspect-ratio: 2/3; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the poster */
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px; /* Optional: Add rounded corners for a sleek look */
+}
+
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  background-color: rgba(50, 50, 50, 0.7); /* Dark gray for a subtle look */
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(80, 80, 80, 1); /* Slightly lighter gray on hover */
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  color: #ffd700; /* Gold for active favorite */
+}
+
+.rating-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.movie-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: white;
+}
+
+.movie-info p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.user-rating {
+  color: #ffd700; /* Gold rating stars */
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    font-size: 0.9rem;
+  }
+
+  .movie-info {
+    padding: 0.75rem;
+  }
+
+  .favorite-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+}

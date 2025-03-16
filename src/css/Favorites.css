@@ -1,0 +1,79 @@
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorites h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #396876;
+  text-shadow: 2px 2px 6px rgba(255, 215, 0, 0.3); /* Soft golden glow */
+}
+
+/* Empty state styling */
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+  border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle gold border */
+  box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.1);
+}
+
+.favorites-empty h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #ffd700; /* Gold color */
+  text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.3);
+}
+
+.favorites-empty p {
+  color: #cccccc;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Animation for new favorites being added */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth fade-in animation */
+.movies-grid > * {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .favorites {
+    padding: 1.5rem;
+  }
+
+  .favorites h2 {
+    font-size: 2rem;
+  }
+
+  .favorites-empty {
+    padding: 3rem 1.5rem;
+    max-width: 90%;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.8rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1.1rem;
+  }
+}
